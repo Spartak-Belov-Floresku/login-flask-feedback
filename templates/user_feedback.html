@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Feedback Page{% endblock %}
+{% block body %}
+<div class="header">
+    <h1 class="text-center mt-3">Feedback Page:</h1>
+</div>
+<div class="list-group">
+    <p class="list-group-item">Username: {{ user.username }} | First name: {{ user.first_name }} | Last name: {{ user.last_name }} | Email: {{ user.email }}</p>
+</div>
+{% if feeds_back | length %}
+    <div class="list-group">
+        {% for feed_back in feeds_back %}
+            <p class="list-group-item list-group-item-info">
+                Title: {{feed_back.title}}<br>
+                Content: {{feed_back.content}}<br>
+                Created By: {{feed_back.username}}
+            </p>
+            <form action="/feedback/{{feed_back.id}}/delete" method="POST"> 
+                <a href="/feedback/{{feed_back.id}}/update" class="btn btn-success mt-3 ml-3">Update</a>
+                <button type="submit" class="btn btn-danger mt-3">Delete</button> 
+            </form>
+        {% endfor %}
+    </div>
+{% else %}
+    <h2 class="text-center mt-3">You do not have feedback yet.</h2>
+{% endif %}
+{% endblock %}

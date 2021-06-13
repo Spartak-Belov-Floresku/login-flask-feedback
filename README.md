@@ -4,8 +4,6 @@
 
 ### To run aplication you have to deploy app on the server
 
-https://spartak-demo.herokuapp.com/register
-
 <img src="https://raw.githubusercontent.com/Spartak-Belov-Floresku/img-jg/main/login-flask-1.png">
 
 <img src="https://raw.githubusercontent.com/Spartak-Belov-Floresku/img-jg/main/login-flask-2.png">
